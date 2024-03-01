@@ -1,0 +1,11 @@
+version: '3'
+services:
+  python-control-server:
+    #privileged: true
+    build: .
+    command: python3 ./main.py
+    volumes: 
+     - ./server:/usr/src/app
+     - ./config:/usr/src/app/config
+    ports:
+      - 8080:8080
